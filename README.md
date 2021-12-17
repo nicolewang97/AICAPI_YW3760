@@ -1,6 +1,11 @@
 # aicapi_yw3760
 
 This is a python package of an API CLIENT to retrieve the data of collections in the Atr Institute of Chicago.
+The outputs inlude:
+An table include related information about the searched artworks.
+An table include related information about the searched tours.
+An image of an artwork, searched by title and artist.
+An table include related information about the searched products.
 
 ## Installation
 
