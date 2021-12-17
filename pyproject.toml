@@ -23,7 +23,6 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
  [tool.poetry]
- ...
  readme = "README.md"
  documentation = 'https://aicapi-yw3760.readthedocs.io'
  homepage = "https://github.com/nicolewang97/AICAPI_YW3760"
