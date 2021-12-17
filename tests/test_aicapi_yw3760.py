@@ -25,5 +25,9 @@ def test_pic_search():
     assert actual is not None
     
 def test_product_search():
-    actual4 = aicapi_yw3760.product_search('Rainy Day','Monet')
+    actual4 = aicapi_yw3760.product_search('Rainy Day','Mug')
     assert actual4 is not None
+    
+def test_product_show():
+    actual5 = aicapi_yw3760.product_show('')
+    assert actual5 is None

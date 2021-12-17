@@ -195,5 +195,50 @@ def product_search(product_art, product_category):
                 html = display(HTML(product_info.to_html(escape = False,formatters = format_dict)))
                 return html
             else:
-                return "Invalid Search! Please try other artworks or categories:)"
+                return"Invalid Search! Please try other artworks or categories:)"
     
+def product_show(product_art_show):
+    '''
+    Function to retrieve the information about top10 products sold in the Art institute of Chicago
+
+    Parameters:
+    -------------
+    Type in any random word
+
+    Returns:
+    -------------
+    Status code: str
+        if the API request went through
+    DataFrame: a dataframe include related info about the top 10 products and images of the products
+
+    Example:
+    -------------
+    >>>product_search('')
+    >>>0	250620	The Age of French Impressionism—Softcover		$30...
+
+    '''
+    params_show_product = {'q': product_art_show} 
+    rproshow = requests.get("https://api.artic.edu/api/v1/products?limit=10", params = params_show_product)
+
+    try:
+        status = rproshow.status_code
+    except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')
+    except Exception as err:
+        print(f'Other error occurred: {err}')
+    else:
+        print('no error (successfully made request)')
+        rproshow1 = json.dumps(rproshow.json(), indent = 2)
+        productshow = json.loads(rproshow1)
+        nproductshow = pd.DataFrame(productshow['data'])
+        product_show_info = nproductshow[['id','title','image_url','price_display','description']]
+                
+        def path_to_image_html(path):
+            return '<img src="'+ path + '" width="60" >'
+        image_cols1 = ['image_url']
+
+        format_dict={}
+        for image_cols1 in image_cols1:
+            format_dict[image_cols1] = path_to_image_html
+        html1 = display(HTML(product_show_info.to_html(escape = False,formatters = format_dict)))
+        return html1
