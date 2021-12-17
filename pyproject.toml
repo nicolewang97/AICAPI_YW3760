@@ -5,6 +5,9 @@ description = "This is a python package of an API CLIENT to retrieve the data of
 authors = ["yw3760"]
 license = "MIT"
 readme = "README.md"
+documentation = 'https://aicapi-yw3760.readthedocs.io'
+homepage = "https://github.com/nicolewang97/AICAPI_YW3760"
+repository = "https://github.com/nicolewang97/AICAPI_YW3760"
 
 [tool.poetry.dependencies]
 python = "^3.9"
