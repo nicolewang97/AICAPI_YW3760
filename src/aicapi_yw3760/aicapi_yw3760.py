@@ -1,6 +1,3 @@
-import sys
-sys.path.append('/Users/yuwang/.pyenv/versions/3.9.0/lib/python3.9/site-packages')
-
 import pandas as pd
 import numpy as np
 import os
