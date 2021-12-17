@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aicapi_yw3760"
-version = "0.1.1"
+version = "0.1.2"
 description = "This is a python package of an API CLIENT to retrieve the data of collections in the Atr Institute of Chicago."
 authors = ["yw3760"]
 license = "MIT"
